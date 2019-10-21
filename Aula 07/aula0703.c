@@ -1,0 +1,60 @@
+/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author: felipe.ferreira $
+* $Date: 2015/06/14 19:44:45 $
+* $Log: aula0703.c,v $
+* Revision 1.1  2015/06/14 19:44:45  felipe.ferreira
+* Initial revision
+*
+* Autor: Felipe Ferreira da Silva
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "aula0701.h"
+#include "aula0702.h"
+
+#define OK				0
+#define NUMERO_ARGUMENTOS_INVALIDO	1
+#define COMPRIMENTO_INVALIDO		2
+
+#define NUMERO_ARGUMENTOS		3
+
+int
+main (int argc, char **argv){
+
+  unsigned comprimento;
+  char *verificacao, *stringGerada;
+  tipoErros erro;
+  
+  if (argc != NUMERO_ARGUMENTOS){
+    printf("Uso: %s <caracteres validos> <comprimento desejado>\n", argv[0]);
+    exit(NUMERO_ARGUMENTOS_INVALIDO);}
+
+  if (argv[2][0] == '-'){
+    printf("Comprimento deve ser maior que 0\n");
+    exit(COMPRIMENTO_INVALIDO);}
+  
+  comprimento = (unsigned) strtoul (argv[2], &verificacao, 10);
+
+  if (*verificacao != EOS){
+    printf("Comprimento eh um numero inteiro\n");
+    exit(COMPRIMENTO_INVALIDO);}
+
+  erro = GerarStringAleatoria (argv[1], comprimento, stringGerada);
+
+  if (erro != ok)
+    printf("%s\n", ObterMensagemErro(erro));
+
+  else
+    printf("%s\n", stringGerada);
+
+  return OK;
+}
+/*$RCSFiles$*/

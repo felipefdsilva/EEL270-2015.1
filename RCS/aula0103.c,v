@@ -1,0 +1,692 @@
+head	1.2;
+access;
+symbols;
+locks
+	felipe.ferreira:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2015.03.30.15.18.02;	author felipe.ferreira;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.03.29.22.46.31;	author felipe.ferreira;	state Exp;
+branches;
+next	;
+
+
+desc
+@tamanho em bytes dos tipos basico+modificadores de sinal+modificadores de largura
+@
+
+
+1.2
+log
+@alteracao no printf do titulo
+@
+text
+@/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author: felipe.ferreira $
+* $Date: 2015/03/29 22:46:31 $
+* $Log: aula0103.c,v $
+* Revision 1.1  2015/03/29 22:46:31  felipe.ferreira
+* Initial revision
+*
+* Autor: Felipe Ferreira da Silva
+*/
+
+#include <stdio.h>
+
+#define OK			0
+
+
+int
+main () { 
+  printf("===================================================\n");
+  printf("Tipos Basicos combinados com Modificadores de Sinal\n");
+  printf("===================================================\n\n");
+ 
+ /* if (sizeof (unsigned void) == 1)
+  *  printf("unsigned void:\t\t\t\t\t %u byte\n", sizeof(unsigned void));
+  *else
+  *  printf("unsigned void:\t\t\t\t\t %u bytes\n", sizeof(unsigned void));
+  */
+  if (sizeof (unsigned char) == 1)
+    printf("unsigned char:\t\t\t\t\t %u byte\n", sizeof(unsigned char));
+  else
+    printf("unsigned char:\t\t\t\t\t %u bytes\n", sizeof(unsigned char));
+  
+  if (sizeof (unsigned int) == 1)
+    printf("unsigned int:\t\t\t\t\t %u byte\n", sizeof(unsigned int));
+  else
+    printf("unsigned int:\t\t\t\t\t %u bytes\n", sizeof(unsigned int));
+
+ /* if (sizeof (unsigned float) == 1)
+  *  printf("unsigned float:\t\t\t\t\t %u byte\n", sizeof(unsigned float));
+  *else
+  *  printf("unsigned float:\t\t\t\t\t %u bytes\n", sizeof(unsigned float));
+  */
+ /* if (sizeof (unsigned double) == 1)
+  *  printf("unsigned double:\t\t\t\t\t %u byte\n", sizeof(unsigned double));
+  *else
+  *  printf("unsigned double:\t\t\t\t\t %u bytes\n", sizeof(unsigned double));
+  */
+ /*if (sizeof (signed void) == 1)
+  *  printf("signed void:\t\t\t\t\t %u byte\n", sizeof(signed void));
+  *else
+  *  printf("signed void:\t\t\t\t\t %u bytes\n", sizeof(signed void));
+  */
+  if (sizeof (signed char) == 1)
+    printf("signed char:\t\t\t\t\t %u byte\n", sizeof(signed char));
+  else
+    printf("signed char:\t\t\t\t\t %u bytes\n", sizeof(signed char));
+  
+  if (sizeof (signed int) == 1)
+    printf("signed int:\t\t\t\t\t %u byte\n", sizeof(signed int));
+  else
+    printf("signed int:\t\t\t\t\t %u bytes\n\n", sizeof(signed int));
+
+ /* if (sizeof (signed float) == 1)
+  *  printf("signed float:\t\t\t\t\t %u byte\n", sizeof(signed float));
+  *else
+  *  printf("signed float:\t\t\t\t\t %u bytes\n", sizeof(signed float));
+  */
+ /* if (sizeof (signed double) == 1)
+  *  printf("signed double:\t\t\t\t\t %u byte\n", sizeof(signed double));
+  *else
+  *  printf("signed double:\t\t\t\t\t %u bytes\n\n", sizeof(signed double));
+  */
+  printf("=====================================================\n");
+  printf("Tipos Basicos combinados com Modificadores de Largura\n");
+  printf("=====================================================\n\n");
+
+ /* if (sizeof (short void) == 1)
+  *  printf("short void:\t\t\t\t\t %u byte\n", sizeof(short void));
+  *else
+  *  printf("short void:\t\t\t\t\t %u bytes\n", sizeof(short void));
+  */
+ /* if (sizeof (short char) == 1)
+  *  printf("short char:\t\t\t\t\t %u byte\n", sizeof(short char));
+  *else
+  *  printf("short char:\t\t\t\t\t %u bytes\n", sizeof(short char));
+  */
+  if (sizeof (short int) == 1)
+    printf("short int:\t\t\t\t\t %u byte\n", sizeof(short int));
+  else
+    printf("short int:\t\t\t\t\t %u bytes\n", sizeof(short int));
+
+ /* if (sizeof (short float) == 1)
+  *  printf("short float:\t\t\t\t\t %u byte\n", sizeof(short float));
+  *else
+  *  printf("short float:\t\t\t\t\t %u bytes\n", sizeof(short float));
+  */
+ /* if (sizeof (short double) == 1)
+  *  printf("short double:\t\t\t\t\t %u byte\n", sizeof(short double));
+  *else
+  *  printf("short double:\t\t\t\t\t %u bytes\n", sizeof(short double));
+  */
+ /*if (sizeof (long void) == 1)
+  *  printf("long void:\t\t\t\t\t %u byte\n", sizeof(long void));
+  *else
+  *  printf("long void:\t\t\t\t\t %u bytes\n", sizeof(long void));
+  */
+ /* if (sizeof (long char) == 1)
+  *  printf("long char:\t\t\t\t\t %u byte\n", sizeof(long char));
+  *else
+  *  printf("long char:\t\t\t\t\t %u bytes\n", sizeof(long char));
+  */
+  if (sizeof (long int) == 1)
+    printf("long int:\t\t\t\t\t %u byte\n", sizeof(long int));
+  else
+    printf("long int:\t\t\t\t\t %u bytes\n", sizeof(long int));
+
+ /* if (sizeof (long float) == 1)
+  *  printf("long float:\t\t\t\t\t %u byte\n", sizeof(long float));
+  *else
+  *  printf("long float:\t\t\t\t\t %u bytes\n", sizeof(long float));
+  */
+  if (sizeof (long double) == 1)
+    printf("long double:\t\t\t\t\t %u byte\n", sizeof(long double));
+  else
+    printf("long double:\t\t\t\t\t %u bytes\n", sizeof(long double));
+
+ /* if (sizeof (long long void) == 1)
+  *  printf("long long void:\t\t\t\t\t %u byte\n", sizeof(long long void));
+  *else
+  *  printf("long long void:\t\t\t\t\t %u bytes\n", sizeof(long long void));
+  */
+ /*if (sizeof (long long char) == 1)
+  *  printf("long long char:\t\t\t\t\t %u byte\n", sizeof(long long char));
+  *else
+  *  printf("long long char:\t\t\t\t\t %u bytes\n", sizeof(long long char));
+  */
+  if (sizeof (long long int) == 1)
+    printf("long long int:\t\t\t\t\t %u byte\n", sizeof(long long int));
+  else
+    printf("long long int:\t\t\t\t\t %u bytes\n\n", sizeof(long long int));
+
+ /* if (sizeof (long long float) == 1)
+  *  printf("long long float:\t\t\t\t\t %u byte\n", sizeof(long long float));
+  *else
+  *  printf("long long float:\t\t\t\t\t %u bytes\n", sizeof(long long float));
+  */
+ /* if (sizeof (long long double) == 1)
+  *  printf("long long double:\t\t\t\t\t %u byte\n", sizeof(long long double));
+  *else
+  *  printf("long long double:\t\t\t\t\t %u bytes\n\n", sizeof(long long double));
+  */
+  printf("=============================================================\n");
+  printf("Tipos Basicos combinados com Modificadores de Sinal e Largura\n");
+  printf("=============================================================\n\n");
+
+/*if (sizeof (unsigned short void) == 1)
+ *   printf("unsigned short void:\t\t\t\t\t %u byte\n", sizeof(unsigned short void));
+ * else
+ *   printf("unsigned short void:\t\t\t\t\t %u bytes\n", sizeof(unsigned short void));
+ *
+ * if (sizeof (unsigned short char) == 1)
+ *   printf("unsigned short char:\t\t\t\t\t %u byte\n", sizeof(unsigned short char));
+ * else
+ *   printf("unsigned short char:\t\t\t\t\t %u bytes\n", sizeof(unsigned short char));
+ */ 
+  if (sizeof (unsigned short int) == 1)
+    printf("unsigned short int:\t\t\t\t\t %u byte\n", sizeof(unsigned short int));
+  else
+    printf("unsigned short int:\t\t\t\t\t %u bytes\n", sizeof(unsigned short int));
+
+ /* if (sizeof (unsigned short float) == 1)
+  *  printf("unsigned short float:\t\t\t\t\t %u byte\n", sizeof(unsigned short float));
+  *else
+  *  printf("unsigned short float:\t\t\t\t\t %u bytes\n", sizeof(unsigned short float));
+  *
+  *if (sizeof (unsigned short double) == 1)
+  *  printf("unsigned short double:\t\t\t\t\t %u byte\n", sizeof(unsigned short double));
+  *else
+  *  printf("unsigned short double:\t\t\t\t\t %u bytes\n", sizeof(unsigned short double));
+  */
+ /* if (sizeof (unsigned long void) == 1)
+  *  printf("unsigned long void:\t\t\t\t\t %u byte\n", sizeof(unsigned long void));
+  *else
+  *  printf("unsigned long void:\t\t\t\t\t %u bytes\n", sizeof(unsigned long void));
+  *
+  *if (sizeof (unsigned long char) == 1)
+  *  printf("unsigned long char:\t\t\t\t\t %u byte\n", sizeof(unsigned long char));
+  *else
+  *  printf("unsigned long char:\t\t\t\t\t %u bytes\n", sizeof(unsigned long char));
+  */
+  if (sizeof (unsigned long int) == 1)
+    printf("unsigned long int:\t\t\t\t\t %u byte\n", sizeof(unsigned long int));
+  else
+    printf("unsigned long int:\t\t\t\t\t %u bytes\n", sizeof(unsigned long int));
+
+ /*if (sizeof (unsigned long float) == 1)
+  *  printf("unsigned long float:\t\t\t\t\t %u byte\n", sizeof(unsigned long float));
+  *else
+  *  printf("unsigned long float:\t\t\t\t\t %u bytes\n", sizeof(unsigned long float));
+  *
+  *if (sizeof (unsigned long double) == 1)
+  *  printf("unsigned long double:\t\t\t\t\t %u byte\n", sizeof(unsigned long double));
+  *else
+  *  printf("unsigned long double:\t\t\t\t\t %u bytes\n", sizeof(unsigned long double));
+  */
+ /* if (sizeof (unsigned long long void) == 1)
+  *  printf("unsigned long long void:\t\t\t\t\t %u byte\n", sizeof(unsigned long long void));
+  *else
+  *  printf("unsigned long long void:\t\t\t\t\t %u bytes\n", sizeof(unsigned long long void));
+  *
+  *if (sizeof (unsigned long long char) == 1)
+  *  printf("unsigned long long char:\t\t\t\t\t %u byte\n", sizeof(unsigned long long char));
+  *else
+  *  printf("unsigned long long char:\t\t\t\t\t %u bytes\n", sizeof(unsigned long long char));
+  */
+  if (sizeof (unsigned long long int) == 1)
+    printf("unsigned long long int:\t\t\t\t\t %u byte\n", sizeof(unsigned long long int));
+  else
+    printf("unsigned long long int:\t\t\t\t\t %u bytes\n", sizeof(unsigned long long int));
+
+ /* if (sizeof (unsigned long long float) == 1)
+  *  printf("unsigned long long float:\t\t\t\t\t %u byte\n", sizeof(unsigned long long float));
+  *else
+  *  printf("unsigned long long float:\t\t\t\t\t %u bytes\n", sizeof(unsigned long long float));
+  *
+  *if (sizeof (unsigned long long double) == 1)
+  *  printf("unsigned long long double:\t\t\t\t\t %u byte\n", sizeof(unsigned long long double));
+  *else
+  *  printf("unsigned long long double:\t\t\t\t\t %u bytes\n", sizeof(unsigned long long double));
+  */
+ /* if (sizeof (signed short void) == 1)
+  *  printf("signed short void:\t\t\t\t\t %u byte\n", sizeof(signed short void));
+  *else
+  *  printf("signed short void:\t\t\t\t\t %u bytes\n", sizeof(signed short void));
+  *
+  *if (sizeof (signed short char) == 1)
+  *  printf("signed short char:\t\t\t\t\t %u byte\n", sizeof(signed short char));
+  *else
+  *  printf("signed short char:\t\t\t\t\t %u bytes\n", sizeof(signed short char));
+  */
+  if (sizeof (signed short int) == 1)
+    printf("signed short int:\t\t\t\t\t %u byte\n", sizeof(signed short int));
+  else
+    printf("signed short int:\t\t\t\t\t %u bytes\n", sizeof(signed short int));
+
+ /*if (sizeof (signed short float) == 1)
+  *  printf("signed short float:\t\t\t\t\t %u byte\n", sizeof(signed short float));
+  *else
+  *  printf("signed short float:\t\t\t\t\t %u bytes\n", sizeof(signed short float));
+  *
+  *if (sizeof (signed short double) == 1)
+  *  printf("signed short double:\t\t\t\t\t %u byte\n", sizeof(signed short double));
+  *else
+  *  printf("signed short double:\t\t\t\t\t %u bytes\n", sizeof(signed short double));
+  */
+ /*if (sizeof (signed long void) == 1)
+  *  printf("signed long void:\t\t\t\t\t %u byte\n", sizeof(signed long void));
+  *else
+  *  printf("signed long void:\t\t\t\t\t %u bytes\n", sizeof(signed long void));
+  *
+  *if (sizeof (signed long char) == 1)
+  *  printf("signed long char:\t\t\t\t\t %u byte\n", sizeof(signed long char));
+  *else
+  *  printf("signed long char:\t\t\t\t\t %u bytes\n", sizeof(signed long char));
+  */
+  if (sizeof (signed long int) == 1)
+    printf("signed long int:\t\t\t\t\t %u byte\n", sizeof(signed long int));
+  else
+    printf("signed long int:\t\t\t\t\t %u bytes\n", sizeof(signed long int));
+
+ /* if (sizeof (signed long float) == 1)
+  *  printf("signed long float:\t\t\t\t\t %u byte\n", sizeof(signed long float));
+  *else
+  *  printf("signed long float:\t\t\t\t\t %u bytes\n", sizeof(signed long float));
+  *
+  *if (sizeof (signed long double) == 1)
+  *  printf("signed long double:\t\t\t\t\t %u byte\n", sizeof(signed long double));
+  *else
+  *  printf("signed long double:\t\t\t\t\t %u bytes\n", sizeof(signed long double));
+  */
+ /*if (sizeof (signed long long void) == 1)
+  *  printf("signed long long void:\t\t\t\t\t %u byte\n", sizeof(signed long long void));
+  *else
+  *  printf("signed long long void:\t\t\t\t\t %u bytes\n", sizeof(signed long long void));
+  *
+  *if (sizeof (signed long long char) == 1)
+  *  printf("signed long long char:\t\t\t\t\t %u byte\n", sizeof(signed long long char));
+  *else
+  *  printf("signed long long char:\t\t\t\t\t %u bytes\n", sizeof(signed long long char));
+  */
+  if (sizeof (signed long long int) == 1)
+    printf("signed long long int:\t\t\t\t\t %u byte\n", sizeof(signed long long int));
+  else
+    printf("signed long long int:\t\t\t\t\t %u bytes\n\n", sizeof(signed long long int));
+
+ /* if (sizeof (signed long long float) == 1)
+  *  printf("signed long long float:\t\t\t\t\t %u byte\n", sizeof(signed long long float));
+  *else
+  *  printf("signed long long float:\t\t\t\t\t %u bytes\n", sizeof(signed long long float));
+  *
+  *if (sizeof (signed long long double) == 1)
+  *  printf("signed long long double:\t\t\t\t\t %u byte\n", sizeof(signed long long double));
+  *else
+  *  printf("signed long long double:\t\t\t\t\t %u bytes\n", sizeof(signed long long double));
+  */
+  printf("=====================\n");
+  printf("Combinacoes Invalidas\n");
+  printf("=====================\n\n");
+
+  printf("unsigned void\nunsigned float\nunsigned double\nsigned void\nsigned float\nsigned double\nshort void\nshort char\nshort float\nshort double\nlong void\nlong char\nlong float\nlong long void\nlong long char\nlong long float\nlong long double\nunsigned short void\nunsigned short char\nunsigned short float\nunsigned short double\nunsigned long void\nunsigned long char\nunsigned long float\nunsigned long double\nunsigned long long void\nunsigned long long char\nunsigned long long float\nunsigned long long double\nsigned short void\nsigned short char\nsigned short float\nsigned short double\nsigned long void\nsigned long char\nsigned long float\nsigned long double\nsigned long long void\nsigned long long char\nsigned long long float\nsigned long long double\n");
+          
+  return OK;
+}
+/*$RCSFile$*/
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d8 6
+a13 3
+* $Author$
+* $Date$
+* $Log$
+d29 1
+a29 1
+  *  printf("unsigned void:\t\t\t\t\t %lu byte\n", sizeof(unsigned void));
+d31 1
+a31 1
+  *  printf("unsigned void:\t\t\t\t\t %lu bytes\n", sizeof(unsigned void));
+d34 1
+a34 1
+    printf("unsigned char:\t\t\t\t\t %lu byte\n", sizeof(unsigned char));
+d36 1
+a36 1
+    printf("unsigned char:\t\t\t\t\t %lu bytes\n", sizeof(unsigned char));
+d39 1
+a39 1
+    printf("unsigned int:\t\t\t\t\t %lu byte\n", sizeof(unsigned int));
+d41 1
+a41 1
+    printf("unsigned int:\t\t\t\t\t %lu bytes\n", sizeof(unsigned int));
+d44 1
+a44 1
+  *  printf("unsigned float:\t\t\t\t\t %lu byte\n", sizeof(unsigned float));
+d46 1
+a46 1
+  *  printf("unsigned float:\t\t\t\t\t %lu bytes\n", sizeof(unsigned float));
+d49 1
+a49 1
+  *  printf("unsigned double:\t\t\t\t\t %lu byte\n", sizeof(unsigned double));
+d51 1
+a51 1
+  *  printf("unsigned double:\t\t\t\t\t %lu bytes\n", sizeof(unsigned double));
+d54 1
+a54 1
+  *  printf("signed void:\t\t\t\t\t %lu byte\n", sizeof(signed void));
+d56 1
+a56 1
+  *  printf("signed void:\t\t\t\t\t %lu bytes\n", sizeof(signed void));
+d59 1
+a59 1
+    printf("signed char:\t\t\t\t\t %lu byte\n", sizeof(signed char));
+d61 1
+a61 1
+    printf("signed char:\t\t\t\t\t %lu bytes\n", sizeof(signed char));
+d64 1
+a64 1
+    printf("signed int:\t\t\t\t\t %lu byte\n", sizeof(signed int));
+d66 1
+a66 1
+    printf("signed int:\t\t\t\t\t %lu bytes\n\n", sizeof(signed int));
+d69 1
+a69 1
+  *  printf("signed float:\t\t\t\t\t %lu byte\n", sizeof(signed float));
+d71 1
+a71 1
+  *  printf("signed float:\t\t\t\t\t %lu bytes\n", sizeof(signed float));
+d74 1
+a74 1
+  *  printf("signed double:\t\t\t\t\t %lu byte\n", sizeof(signed double));
+d76 1
+a76 1
+  *  printf("signed double:\t\t\t\t\t %lu bytes\n\n", sizeof(signed double));
+d83 1
+a83 1
+  *  printf("short void:\t\t\t\t\t %lu byte\n", sizeof(short void));
+d85 1
+a85 1
+  *  printf("short void:\t\t\t\t\t %lu bytes\n", sizeof(short void));
+d88 1
+a88 1
+  *  printf("short char:\t\t\t\t\t %lu byte\n", sizeof(short char));
+d90 1
+a90 1
+  *  printf("short char:\t\t\t\t\t %lu bytes\n", sizeof(short char));
+d93 1
+a93 1
+    printf("short int:\t\t\t\t\t %lu byte\n", sizeof(short int));
+d95 1
+a95 1
+    printf("short int:\t\t\t\t\t %lu bytes\n", sizeof(short int));
+d98 1
+a98 1
+  *  printf("short float:\t\t\t\t\t %lu byte\n", sizeof(short float));
+d100 1
+a100 1
+  *  printf("short float:\t\t\t\t\t %lu bytes\n", sizeof(short float));
+d103 1
+a103 1
+  *  printf("short double:\t\t\t\t\t %lu byte\n", sizeof(short double));
+d105 1
+a105 1
+  *  printf("short double:\t\t\t\t\t %lu bytes\n", sizeof(short double));
+d108 1
+a108 1
+  *  printf("long void:\t\t\t\t\t %lu byte\n", sizeof(long void));
+d110 1
+a110 1
+  *  printf("long void:\t\t\t\t\t %lu bytes\n", sizeof(long void));
+d113 1
+a113 1
+  *  printf("long char:\t\t\t\t\t %lu byte\n", sizeof(long char));
+d115 1
+a115 1
+  *  printf("long char:\t\t\t\t\t %lu bytes\n", sizeof(long char));
+d118 1
+a118 1
+    printf("long int:\t\t\t\t\t %lu byte\n", sizeof(long int));
+d120 1
+a120 1
+    printf("long int:\t\t\t\t\t %lu bytes\n", sizeof(long int));
+d123 1
+a123 1
+  *  printf("long float:\t\t\t\t\t %lu byte\n", sizeof(long float));
+d125 1
+a125 1
+  *  printf("long float:\t\t\t\t\t %lu bytes\n", sizeof(long float));
+d128 1
+a128 1
+    printf("long double:\t\t\t\t\t %lu byte\n", sizeof(long double));
+d130 1
+a130 1
+    printf("long double:\t\t\t\t\t %lu bytes\n", sizeof(long double));
+d133 1
+a133 1
+  *  printf("long long void:\t\t\t\t\t %lu byte\n", sizeof(long long void));
+d135 1
+a135 1
+  *  printf("long long void:\t\t\t\t\t %lu bytes\n", sizeof(long long void));
+d138 1
+a138 1
+  *  printf("long long char:\t\t\t\t\t %lu byte\n", sizeof(long long char));
+d140 1
+a140 1
+  *  printf("long long char:\t\t\t\t\t %lu bytes\n", sizeof(long long char));
+d143 1
+a143 1
+    printf("long long int:\t\t\t\t\t %lu byte\n", sizeof(long long int));
+d145 1
+a145 1
+    printf("long long int:\t\t\t\t\t %lu bytes\n\n", sizeof(long long int));
+d148 1
+a148 1
+  *  printf("long long float:\t\t\t\t\t %lu byte\n", sizeof(long long float));
+d150 1
+a150 1
+  *  printf("long long float:\t\t\t\t\t %lu bytes\n", sizeof(long long float));
+d153 1
+a153 1
+  *  printf("long long double:\t\t\t\t\t %lu byte\n", sizeof(long long double));
+d155 1
+a155 1
+  *  printf("long long double:\t\t\t\t\t %lu bytes\n\n", sizeof(long long double));
+d162 1
+a162 1
+ *   printf("unsigned short void:\t\t\t\t\t %lu byte\n", sizeof(unsigned short void));
+d164 1
+a164 1
+ *   printf("unsigned short void:\t\t\t\t\t %lu bytes\n", sizeof(unsigned short void));
+d167 1
+a167 1
+ *   printf("unsigned short char:\t\t\t\t\t %lu byte\n", sizeof(unsigned short char));
+d169 1
+a169 1
+ *   printf("unsigned short char:\t\t\t\t\t %lu bytes\n", sizeof(unsigned short char));
+d172 1
+a172 1
+    printf("unsigned short int:\t\t\t\t\t %lu byte\n", sizeof(unsigned short int));
+d174 1
+a174 1
+    printf("unsigned short int:\t\t\t\t\t %lu bytes\n", sizeof(unsigned short int));
+d177 1
+a177 1
+  *  printf("unsigned short float:\t\t\t\t\t %lu byte\n", sizeof(unsigned short float));
+d179 1
+a179 1
+  *  printf("unsigned short float:\t\t\t\t\t %lu bytes\n", sizeof(unsigned short float));
+d182 1
+a182 1
+  *  printf("unsigned short double:\t\t\t\t\t %lu byte\n", sizeof(unsigned short double));
+d184 1
+a184 1
+  *  printf("unsigned short double:\t\t\t\t\t %lu bytes\n", sizeof(unsigned short double));
+d187 1
+a187 1
+  *  printf("unsigned long void:\t\t\t\t\t %lu byte\n", sizeof(unsigned long void));
+d189 1
+a189 1
+  *  printf("unsigned long void:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long void));
+d192 1
+a192 1
+  *  printf("unsigned long char:\t\t\t\t\t %lu byte\n", sizeof(unsigned long char));
+d194 1
+a194 1
+  *  printf("unsigned long char:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long char));
+d197 1
+a197 1
+    printf("unsigned long int:\t\t\t\t\t %lu byte\n", sizeof(unsigned long int));
+d199 1
+a199 1
+    printf("unsigned long int:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long int));
+d202 1
+a202 1
+  *  printf("unsigned long float:\t\t\t\t\t %lu byte\n", sizeof(unsigned long float));
+d204 1
+a204 1
+  *  printf("unsigned long float:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long float));
+d207 1
+a207 1
+  *  printf("unsigned long double:\t\t\t\t\t %lu byte\n", sizeof(unsigned long double));
+d209 1
+a209 1
+  *  printf("unsigned long double:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long double));
+d212 1
+a212 1
+  *  printf("unsigned long long void:\t\t\t\t\t %lu byte\n", sizeof(unsigned long long void));
+d214 1
+a214 1
+  *  printf("unsigned long long void:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long long void));
+d217 1
+a217 1
+  *  printf("unsigned long long char:\t\t\t\t\t %lu byte\n", sizeof(unsigned long long char));
+d219 1
+a219 1
+  *  printf("unsigned long long char:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long long char));
+d222 1
+a222 1
+    printf("unsigned long long int:\t\t\t\t\t %lu byte\n", sizeof(unsigned long long int));
+d224 1
+a224 1
+    printf("unsigned long long int:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long long int));
+d227 1
+a227 1
+  *  printf("unsigned long long float:\t\t\t\t\t %lu byte\n", sizeof(unsigned long long float));
+d229 1
+a229 1
+  *  printf("unsigned long long float:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long long float));
+d232 1
+a232 1
+  *  printf("unsigned long long double:\t\t\t\t\t %lu byte\n", sizeof(unsigned long long double));
+d234 1
+a234 1
+  *  printf("unsigned long long double:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long long double));
+d237 1
+a237 1
+  *  printf("signed short void:\t\t\t\t\t %lu byte\n", sizeof(signed short void));
+d239 1
+a239 1
+  *  printf("signed short void:\t\t\t\t\t %lu bytes\n", sizeof(signed short void));
+d242 1
+a242 1
+  *  printf("signed short char:\t\t\t\t\t %lu byte\n", sizeof(signed short char));
+d244 1
+a244 1
+  *  printf("signed short char:\t\t\t\t\t %lu bytes\n", sizeof(signed short char));
+d247 1
+a247 1
+    printf("signed short int:\t\t\t\t\t %lu byte\n", sizeof(signed short int));
+d249 1
+a249 1
+    printf("signed short int:\t\t\t\t\t %lu bytes\n", sizeof(signed short int));
+d252 1
+a252 1
+  *  printf("signed short float:\t\t\t\t\t %lu byte\n", sizeof(signed short float));
+d254 1
+a254 1
+  *  printf("signed short float:\t\t\t\t\t %lu bytes\n", sizeof(signed short float));
+d257 1
+a257 1
+  *  printf("signed short double:\t\t\t\t\t %lu byte\n", sizeof(signed short double));
+d259 1
+a259 1
+  *  printf("signed short double:\t\t\t\t\t %lu bytes\n", sizeof(signed short double));
+d262 1
+a262 1
+  *  printf("signed long void:\t\t\t\t\t %lu byte\n", sizeof(signed long void));
+d264 1
+a264 1
+  *  printf("signed long void:\t\t\t\t\t %lu bytes\n", sizeof(signed long void));
+d267 1
+a267 1
+  *  printf("signed long char:\t\t\t\t\t %lu byte\n", sizeof(signed long char));
+d269 1
+a269 1
+  *  printf("signed long char:\t\t\t\t\t %lu bytes\n", sizeof(signed long char));
+d272 1
+a272 1
+    printf("signed long int:\t\t\t\t\t %lu byte\n", sizeof(signed long int));
+d274 1
+a274 1
+    printf("signed long int:\t\t\t\t\t %lu bytes\n", sizeof(signed long int));
+d277 1
+a277 1
+  *  printf("signed long float:\t\t\t\t\t %lu byte\n", sizeof(signed long float));
+d279 1
+a279 1
+  *  printf("signed long float:\t\t\t\t\t %lu bytes\n", sizeof(signed long float));
+d282 1
+a282 1
+  *  printf("signed long double:\t\t\t\t\t %lu byte\n", sizeof(signed long double));
+d284 1
+a284 1
+  *  printf("signed long double:\t\t\t\t\t %lu bytes\n", sizeof(signed long double));
+d287 1
+a287 1
+  *  printf("signed long long void:\t\t\t\t\t %lu byte\n", sizeof(signed long long void));
+d289 1
+a289 1
+  *  printf("signed long long void:\t\t\t\t\t %lu bytes\n", sizeof(signed long long void));
+d292 1
+a292 1
+  *  printf("signed long long char:\t\t\t\t\t %lu byte\n", sizeof(signed long long char));
+d294 1
+a294 1
+  *  printf("signed long long char:\t\t\t\t\t %lu bytes\n", sizeof(signed long long char));
+d297 1
+a297 1
+    printf("signed long long int:\t\t\t\t\t %lu byte\n", sizeof(signed long long int));
+d299 1
+a299 1
+    printf("signed long long int:\t\t\t\t\t %lu bytes\n\n", sizeof(signed long long int));
+d302 1
+a302 1
+  *  printf("signed long long float:\t\t\t\t\t %lu byte\n", sizeof(signed long long float));
+d304 1
+a304 1
+  *  printf("signed long long float:\t\t\t\t\t %lu bytes\n", sizeof(signed long long float));
+d307 1
+a307 1
+  *  printf("signed long long double:\t\t\t\t\t %lu byte\n", sizeof(signed long long double));
+d309 1
+a309 1
+  *  printf("signed long long double:\t\t\t\t\t %lu bytes\n", sizeof(signed long long double));
+@

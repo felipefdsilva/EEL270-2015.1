@@ -1,0 +1,144 @@
+head	1.2;
+access;
+symbols;
+locks
+	felipe.ferreira:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2015.03.30.15.18.02;	author felipe.ferreira;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.03.29.22.46.31;	author felipe.ferreira;	state Exp;
+branches;
+next	;
+
+
+desc
+@Codigo fonte do programa que exibe o tamanho em bytes dos modificades de largura e sinal
+@
+
+
+1.2
+log
+@alteracao no printf do titulo
+@
+text
+@/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author: felipe.ferreira $
+* $Date: 2015/03/29 22:46:31 $
+* $Log: aula0102.c,v $
+* Revision 1.1  2015/03/29 22:46:31  felipe.ferreira
+* Initial revision
+*
+* Autor: Felipe Ferreira da Silva
+*/
+
+#include <stdio.h>
+
+#define OK			0
+
+
+int
+main () { 
+
+  printf("==============================================================\n");
+  printf("Modificadores de Sinal combinados com Modificadores de Largura\n");
+  printf("==============================================================\n\n");
+
+  if (sizeof (unsigned short) == 1)
+    printf("unsigned short:\t\t\t\t\t %u byte\n", sizeof(unsigned short));
+  else
+    printf("unsigned short:\t\t\t\t\t %u bytes\n", sizeof(unsigned short));
+
+  if (sizeof (unsigned long) == 1)
+    printf("unsigned long:\t\t\t\t\t %u byte\n", sizeof(unsigned long));
+  else
+    printf("unsigned long:\t\t\t\t\t %u bytes\n", sizeof(unsigned long));
+  
+  if (sizeof (unsigned long long) == 1)
+    printf("unsigned long long:\t\t\t\t\t %u byte\n", sizeof(unsigned long long));
+  else
+    printf("unsigned long long:\t\t\t\t\t %u bytes\n", sizeof(unsigned long long));
+
+  if (sizeof (signed short) == 1)
+    printf("signed short:\t\t\t\t\t %u byte\n", sizeof(signed short));
+  else
+    printf("signed short:\t\t\t\t\t %u bytes\n", sizeof(signed short));
+
+  if (sizeof (signed long) == 1)
+    printf("signed long:\t\t\t\t\t %u byte\n", sizeof(signed long));
+  else
+    printf("signed long:\t\t\t\t\t %u bytes\n", sizeof(signed long));
+
+  if (sizeof (signed long long) == 1)
+    printf("signed long long:\t\t\t\t\t %u byte\n", sizeof(signed long long));
+  else
+    printf("signed long long:\t\t\t\t\t %u bytes\n", sizeof(signed long long));
+
+return OK;
+}
+/*$RCSFile$*/
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d8 6
+a13 3
+* $Author$
+* $Date$
+* $Log$
+d24 5
+a28 2
+  printf("Modificadores de Sinal combinados com Modificadores de Largura\n\n");
+  
+d30 1
+a30 1
+    printf("unsigned short:\t\t\t\t\t %lu byte\n", sizeof(unsigned short));
+d32 1
+a32 1
+    printf("unsigned short:\t\t\t\t\t %lu bytes\n", sizeof(unsigned short));
+d35 1
+a35 1
+    printf("unsigned long:\t\t\t\t\t %lu byte\n", sizeof(unsigned long));
+d37 1
+a37 1
+    printf("unsigned long:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long));
+d40 1
+a40 1
+    printf("unsigned long long:\t\t\t\t\t %lu byte\n", sizeof(unsigned long long));
+d42 1
+a42 1
+    printf("unsigned long long:\t\t\t\t\t %lu bytes\n", sizeof(unsigned long long));
+d45 1
+a45 1
+    printf("signed short:\t\t\t\t\t %lu byte\n", sizeof(signed short));
+d47 1
+a47 1
+    printf("signed short:\t\t\t\t\t %lu bytes\n", sizeof(signed short));
+d50 1
+a50 1
+    printf("signed long:\t\t\t\t\t %lu byte\n", sizeof(signed long));
+d52 1
+a52 1
+    printf("signed long:\t\t\t\t\t %lu bytes\n", sizeof(signed long));
+d55 1
+a55 1
+    printf("signed long long:\t\t\t\t\t %lu byte\n", sizeof(signed long long));
+d57 1
+a57 1
+    printf("signed long long:\t\t\t\t\t %lu bytes\n", sizeof(signed long long));
+@

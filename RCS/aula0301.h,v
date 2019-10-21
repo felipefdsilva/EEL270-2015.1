@@ -1,0 +1,71 @@
+head	1.2;
+access;
+symbols;
+locks
+	felipe.ferreira:1.2; strict;
+comment	@ * @;
+
+
+1.2
+date	2015.04.30.16.20.53;	author felipe.ferreira;	state Exp;
+branches;
+next	1.1;
+
+1.1
+date	2015.04.16.18.13.19;	author felipe.ferreira;	state Exp;
+branches;
+next	;
+
+
+desc
+@Protótipo da funcao calcular termo fibonacci
+@
+
+
+1.2
+log
+@macro aula0301.h incluida
+@
+text
+@/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author: felipe.ferreira $
+* $Date: 2015/04/16 18:13:19 $
+* $Log: aula0301.h,v $
+* Revision 1.1  2015/04/16 18:13:19  felipe.ferreira
+* Initial revision
+*
+* Autor: Felipe Ferreira da Silva
+*/
+
+#ifndef _AULA_0301_
+#define _AULA_0301_ "aula0301.h"
+
+unsigned long long
+CalcularTermoSerieFibonacci(unsigned short);
+
+#endif
+
+/*$RCSFiles$*/
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@d8 6
+a13 3
+* $Author$
+* $Date$
+* $Log$
+d18 1
+a18 1
+#define _AULA_0301_
+@

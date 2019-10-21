@@ -1,0 +1,107 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2015.05.07.00.40.07;	author felipe.ferreira;	state Exp;
+branches;
+next	;
+
+
+desc
+@arquivo do testes da funcao CalcularProdutoMatrizes
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author: fsilva $
+* $Date: 2015/05/07 00:29:54 $
+* $Log: aula0402.c,v $
+* Revision 1.1  2015/05/07 00:29:54  fsilva
+* Initial revision
+*
+* Autor: Felipe Ferreira da Silva
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "aula0401.h"
+
+#define NUMERO_ARGUMENTOS			LINHASA*COLUNASA+LINHASB*COLUNASB+1
+#define EOS					'\0'
+
+#define OK					0
+#define NUMERO_ARGUMENTOS_INVALIDO		1
+#define ARGUMENTO_INVALIDO			3
+
+int
+main (int argc, char **argv)
+{
+  int linha, coluna;
+  char *verificacao;
+  int MatrizA [LINHASA][COLUNASA], MatrizB[LINHASB][COLUNASB], MatrizResultado[LINHASA][COLUNASB];
+
+  if (argc!= NUMERO_ARGUMENTOS){
+   printf("Uso %s: <a11> <a12> ... <a1n> <am1> <am2> ...<amn> <b11> ...<bmn>\n", argv[0]);
+   exit(NUMERO_ARGUMENTOS_INVALIDO);}
+
+  for (linha = 0; linha < LINHASA; linha++){
+    for (coluna = 0; coluna < COLUNASA; coluna++){
+      MatrizA[linha][coluna] = 
+      (int) strtol (argv[1 + linha*COLUNASA + coluna],&verificacao,10);}}
+      
+  if (*verificacao != EOS){
+    printf("Apenas inteiros como argumentos\n");
+    exit (ARGUMENTO_INVALIDO);}
+
+  for (linha = 0; linha < LINHASB; linha++){
+    for (coluna = 0; coluna < COLUNASB; coluna++){   
+      MatrizB[linha][coluna] = 
+      (int) strtol (argv[linha*COLUNASB + coluna + LINHASA*COLUNASA+1],&verificacao,10);}}
+      
+  if (*verificacao != EOS){
+    printf("Apenas inteiros como argumentos\n");
+    exit (ARGUMENTO_INVALIDO);}
+  
+  /*printf("Matriz A:\n");
+
+  for (linha = 0; linha < LINHASA; linha++){
+    for (coluna = 0; coluna < COLUNASA; coluna++)
+      printf("\t%i", MatrizA[linha][coluna]);
+    printf("\n");}*/
+  
+  /*printf("Matriz B:\n");
+
+  for (linha = 0; linha < LINHASB; linha++){
+    for (coluna = 0; coluna < COLUNASB; coluna++)
+      printf("\t%i", MatrizB[linha][coluna]);
+    printf("\n");}*/
+
+  CalcularProdutoMatrizes(MatrizA, MatrizB, MatrizResultado);
+
+  printf("Matriz Resultado:\n");
+
+  for (linha = 0; linha < LINHASA; linha++){
+    for (coluna = 0; coluna < COLUNASB; coluna++)
+      printf("\t%i", MatrizResultado[linha][coluna]);
+    printf("\n");}
+
+  return OK;
+}
+/*$RCSFiles$*/
+@

@@ -1,0 +1,56 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2015.06.03.02.48.03;	author felipe.ferreira;	state Exp;
+branches;
+next	;
+
+
+desc
+@hearder contendo o prototipo das funcao CodificarBase64 e DecodificarBase64
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author$
+* $Date$
+* $Log$
+* Autor: Felipe Ferreira da Silva
+*/
+#ifndef _AULA_0501_
+#define _AULA_0501_   "@@(#)aula0501.h $Revision$"
+
+#define CONJUNTO_BASE_64		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+#define EOS				'\0'
+#define PAD				'='
+
+typedef unsigned char byte;
+
+typedef enum {ok, entradaNull, saidaNull, 
+		erroConversao, erroDecodificacao, caractereInvalido} tipoErros;
+
+tipoErros
+CodificarBase64 (byte*, unsigned long, byte*);
+
+tipoErros
+DecodificarBase64 (byte*, unsigned long, byte*);
+
+#endif
+/*$RCSFiles$*/
+@

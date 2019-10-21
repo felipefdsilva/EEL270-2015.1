@@ -1,0 +1,116 @@
+/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author: felipe.ferreira $
+* $Date: 2015/06/03 02:48:03 $
+* $Log: aula0501.c,v $
+* Revision 1.1  2015/06/03 02:48:03  felipe.ferreira
+* Initial revision
+*
+* Autor: Felipe Ferreira da Silva
+*/
+
+#include "aula0501.h"
+
+tipoErros
+CodificarBase64 (byte *entrada, unsigned long comprimento, byte *saida){
+
+  unsigned long indiceEntrada, indiceSaida;
+  
+  if (!entrada)
+    return entradaNull;
+
+  if (!saida)
+    return saidaNull;
+
+  for (indiceSaida = indiceEntrada = 0; indiceEntrada != (comprimento/3)*3; indiceSaida+=4, indiceEntrada+=3){
+
+    saida[indiceSaida] = 
+    CONJUNTO_BASE_64[(entrada[indiceEntrada]>>2)&(0x3F)];
+
+    saida[indiceSaida+1] = 
+    CONJUNTO_BASE_64[((entrada[indiceEntrada]<<4)&(0x30)) | ((entrada[indiceEntrada+1]>>4)&(0x0F))];
+ 
+    saida[indiceSaida+2] = 
+    CONJUNTO_BASE_64[((entrada[indiceEntrada+1]<<2)&(0x3C)) | ((entrada[indiceEntrada+2]>>6)&(0x03))];
+
+    saida[indiceSaida+3] = 
+    CONJUNTO_BASE_64[entrada[indiceEntrada+2]&0x3F];}
+    
+  if (comprimento%3 == 2){
+      
+      saida[indiceSaida] = 
+      CONJUNTO_BASE_64[((entrada[comprimento-2]>>2)&(0x3F))];
+
+      saida[indiceSaida+1] = 
+      CONJUNTO_BASE_64[((entrada[comprimento-2]<<4)&(0x30)) | ((entrada[comprimento-1]>>4)&(0x0F))];
+ 
+      saida[indiceSaida+2] = 
+      CONJUNTO_BASE_64[((entrada[comprimento-1]<<2)&(0x3C))];
+  
+      saida[indiceSaida+3] = PAD;
+
+      saida[indiceSaida+4] = EOS;}
+    
+
+  if (comprimento%3 == 1){
+
+      saida[indiceSaida] = CONJUNTO_BASE_64[(entrada[comprimento-1]>>2&0x3F)];
+      saida[indiceSaida+1] = CONJUNTO_BASE_64[(entrada[comprimento-1]<<4&0x30)];
+      saida[indiceSaida+2] = saida[indiceSaida+3] = PAD;
+      saida[indiceSaida+4] = EOS;}
+
+  if (comprimento%3 == 0)
+   saida[indiceSaida] = EOS;
+
+  if (indiceSaida < indiceEntrada)
+    return erroConversao;
+  
+  return ok;
+}
+
+tipoErros
+DecodificarBase64 (byte *entrada, unsigned long comprimento, byte *saida){
+  
+  unsigned long indiceEntrada, indiceSaida, indiceBase64;
+
+  if (!entrada)
+    return entradaNull;
+
+  if (!saida)
+    return saidaNull;
+
+  for (indiceEntrada = 0; indiceEntrada < comprimento; indiceEntrada++)
+   if (entrada[indiceEntrada] != PAD){
+      for (indiceBase64 = 0; entrada[indiceEntrada] != CONJUNTO_BASE_64[indiceBase64]; indiceBase64++)
+        if (indiceBase64 == 63)
+          return caractereInvalido;
+
+       entrada[indiceEntrada] = indiceBase64;}
+
+  for (indiceEntrada = 0, indiceSaida = 0; indiceEntrada < comprimento; indiceEntrada+=4, indiceSaida+=3){
+    saida[indiceSaida] = ((entrada[indiceEntrada]<<2)&(0xFC)) | ((entrada[indiceEntrada+1]>>4)&(0x03));
+    saida[indiceSaida+1] = (((entrada[indiceEntrada+1]<<4)&(0xF0)) | ((entrada[indiceEntrada+2]>>2)&(0x0F)));
+    saida[indiceSaida+2] = (((entrada[indiceEntrada+2]<<6)&(0xC0)) | ((entrada[indiceEntrada+3])&(0x3F)));
+  }
+
+  if (entrada[comprimento-2] == PAD)
+    saida[indiceSaida-2] = EOS;
+
+  else if (entrada[comprimento-1] == PAD)
+    saida[indiceSaida-1] = EOS;
+
+  else
+    saida[indiceSaida] = EOS;
+
+  if (indiceSaida > indiceEntrada)
+    return erroDecodificacao;
+
+  return ok;
+}
+
+/*$RCSFiles$*/

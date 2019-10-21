@@ -1,0 +1,56 @@
+head	1.1;
+access;
+symbols;
+locks
+	felipe.ferreira:1.1; strict;
+comment	@ * @;
+
+
+1.1
+date	2007.01.17.06.09.30;	author felipe.ferreira;	state Exp;
+branches;
+next	;
+
+
+desc
+@prototipos das funcoes GerarDigitoVerificadorPisPasep e ValidarPisPasep
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author$
+* $Date$
+* $Log$
+* Autor: Felipe Ferreira da Silva
+*/
+
+#ifndef _AULA_0601_H_
+#define _AULA_0601_H_ "@@(#)aula0601.h"
+
+#define EOS				'\0'
+#define TAMANHO_PIS_PASEP		11
+
+typedef enum {falso, verdadeiro} boolean;
+typedef unsigned char byte;
+
+byte 
+GerarDigitoVerificadorPisPasep (byte [TAMANHO_PIS_PASEP]);
+
+boolean 
+ValidarPisPasep (byte [TAMANHO_PIS_PASEP]);
+
+#endif
+
+/*$RCSFiles$*/
+@

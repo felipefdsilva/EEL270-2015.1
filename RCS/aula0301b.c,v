@@ -1,0 +1,62 @@
+head	1.1;
+access;
+symbols;
+locks; strict;
+comment	@ * @;
+
+
+1.1
+date	2015.04.16.18.13.19;	author felipe.ferreira;	state Exp;
+branches;
+next	;
+
+
+desc
+@funcao calcular termo fibonacci usando do while
+@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@/*Unversidade Federal do Rio de Janeiro
+* Escola Politecnica
+* Departamento de Eletronica e de Computacao
+* EEL270 - Computacao II - Turma 2015/1
+* Prof. Marcelo Luiz Drumond Lanza
+* Descrição:
+*
+* $Author$
+* $Date$
+* $Log$
+* Autor: Felipe Ferreira da Silva
+*/
+
+#include "aula0301.h"
+
+unsigned long long
+CalcularTermoSerieFibonacci (unsigned short termo){
+  
+  unsigned long long auxiliarSomaFibonacci1, auxiliarSomaFibonacci2, somaFibonacci;
+
+  if ((termo == 0)||(termo == 1))
+    return termo;
+
+  auxiliarSomaFibonacci1 = 0;
+  auxiliarSomaFibonacci2 = 1;
+
+  do {
+    somaFibonacci = auxiliarSomaFibonacci1 + auxiliarSomaFibonacci2;
+    auxiliarSomaFibonacci1 = auxiliarSomaFibonacci2;
+    auxiliarSomaFibonacci2 = somaFibonacci;
+    termo--;
+     }
+  while (termo > 1);
+
+  return somaFibonacci;
+}
+
+/*$RCSFiles$*/
+@
